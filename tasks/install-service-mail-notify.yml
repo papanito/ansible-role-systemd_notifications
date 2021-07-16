@@ -16,15 +16,8 @@
 - name: Install systemd service for mail notifier
   template:
     src: "{{ sn_systemd_service_file }}"
-    dest: "{{ systemd_target_dir }}/{{ sn_service_name_mail }}@.service"
+    dest: "{{ systemd_target_dir }}/{{ sn_service_name_mail }}.service"
   register: sn_service_file_changed
 - name: Reload systemd unit if args were changed.
   ansible.builtin.systemd:
-    state: restarted
     daemon_reload: true
-    name: "{{ sn_service_name_mail }}"
-- name: Enable systemd service for mail notifier
-  ansible.builtin.systemd:
-    name: "{{ sn_service_name_mail }}@.service"
-    state: started
-    enabled: yes

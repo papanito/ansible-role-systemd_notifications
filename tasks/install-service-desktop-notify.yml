@@ -16,10 +16,8 @@
 - name: Install systemd service for desktop notifier
   template:
     src: "{{ sn_systemd_service_file }}"
-    dest: "{{ systemd_target_dir }}/{{ sn_service_name_desktop }}@.service"
+    dest: "{{ systemd_target_dir }}/{{ sn_service_name_desktop }}.service"
   register: sn_service_file_changed
 - name: Reload systemd unit if args were changed.
   ansible.builtin.systemd:
-    state: restarted
     daemon_reload: true
-    name: "{{ sn_service_name_desktop }}"

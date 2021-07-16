@@ -4,6 +4,6 @@
     path: "{{ sn_file_to_remove }}"
   loop:
     - "{{ systemd_script_target }}/{{ sn_script_name_desktop }}"
-    - "{{ systemd_target_dir }}/{{ sn_service_name_desktop }}@.service"
+    - "{{ systemd_target_dir }}/{{ sn_service_name_desktop }}.service"
   loop_control:
     loop_var: sn_file_to_remove
