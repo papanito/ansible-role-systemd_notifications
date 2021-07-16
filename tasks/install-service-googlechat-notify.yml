@@ -2,7 +2,7 @@
   set_fact:
     sn_notification_type: googlechat
     sn_systemd_user_final: "{{ sn_systemd_user }}"
-    sn_execstart: "{{ systemd_script_target }}/{{ sn_script_name_googlechat }} -s %i"
+    sn_execstart: "{{ systemd_script_target }}/{{ sn_script_name_googlechat }} -s %i -u {{ sn_googlechat_url }}"
 - name: Install googlechat notifier script
   template:
     src: "{{ sn_script_name_googlechat }}.j2"
