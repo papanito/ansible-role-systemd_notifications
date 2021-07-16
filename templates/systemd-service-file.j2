@@ -4,5 +4,5 @@ Description=Systemd notifier for {{ sn_notification_type }}
 [Service]
 Type=oneshot
 ExecStart={{ sn_execstart }}
-User={{ sn_systemd_user }}
+User={{ sn_systemd_user_final }}
 Group={{ sn_systemd_group }}

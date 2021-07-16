@@ -1,11 +1,8 @@
 - name: Set default variables
   set_fact:
     sn_notification_type: desktop
-    sn_execstart: "{{ systemd_script_target }}/{{ sn_script_name_desktop }} -s %i"
-- name: Set variables in case username is set
-  set_fact:
     sn_execstart: "{{ systemd_script_target }}/{{ sn_script_name_desktop }} -s %i -u {{ sn_username }}"
-  when: sn_username is defined
+    sn_systemd_user_final: "{{ sn_username }}"
 - name: Install desktop notifier script
   template:
     src: "{{ sn_script_name_desktop }}.j2"

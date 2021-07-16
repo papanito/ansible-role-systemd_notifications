@@ -1,7 +1,7 @@
 - name: Install systemd desktop notifier
   hosts: localhost
   vars:
-    - sn_systemd_user: aedu
+    - sn_username: aedu
     - sn_install_desktop_notifier_service: Yes
 
   roles:

@@ -1,11 +1,8 @@
 - name: Set default variables
   set_fact:
     sn_notification_type: mail
+    sn_systemd_user_final: "{{ sn_systemd_user }}"
     sn_execstart: "{{ systemd_script_target }}/{{ sn_script_name_mail }} -s %i"
-- name: Set variables in case username is set
-  set_fact:
-    sn_execstart: "{{ systemd_script_target }}/{{ sn_script_name_mail }} -s %i -u {{ sn_username }}"
-  when: sn_username is defined
 - name: Install mail notifier script
   template:
     src: "{{ sn_script_name_mail }}.j2"

@@ -22,17 +22,17 @@ There are common role variables and service specific ones. Most variables should
 | `sn_install_desktop_notifier_service`   | Whether to install the service for desktop notification - `No` will uninstall it if previously installed.     | `No`             |
 | `sn_install_googlechat_notifier_service` | Whether to install the service for google chat notification - `No` will uninstall it if previously installed. | `No`             |
 | `sn_install_mail_notifier_service`       | Whether to install the service for mail notification - `No` will uninstall it if previously installed.        | `No`             |
+| `systemd_script_mode`        | Mode of the script file                                  | `0774`                        |
+| `systemd_script_user`        | Owner of the script file                                 | `0774`                        |
+| `sn_systemd_user`            | User under which the service runs.                       | `root`                        |
+| `sn_systemd_group`           | User group under which the service runs.                 | `systemd-journal`             |
 
 The following role variables are fixed and cannot be overriden:
 
 | Parameter                    | Description                                              | Default Value                 |
 | ---------------------------- | -------------------------------------------------------- | ----------------------------- |
 | `systemd_script_target`      | Location where to place script files                     | `/usr/local/bin/`             |
-| `systemd_script_mode`         | Mode of the script file                 | `0774`        |
-| `systemd_script_user`         | Owner of the script file                 | `0774`        |
 | `systemd_target_dir`         | Location where to place `.service` files                 | `/etc/systemd/system/`        |
-| `sn_systemd_user`            | User under which the service runs.                       | `root`                      |
-| `sn_systemd_group`           | User group under which the service runs.                 | `systemd-journal`             |
 | `sn_service_name_googlechat` | Name of the systemd service for google chat notification | `systemd-googlechat-notifier` |
 | `sn_script_name_googlechat`  | Name of the script for google chat notification          | `notify-google-chat.sh`       |
 | `sn_service_name_mail`       | Name of the systemd service for mail notification        | `systemd-mail-notifier`       |
@@ -42,11 +42,11 @@ The following role variables are fixed and cannot be overriden:
 
 ### Desktop Notification
 
-If `sn_install_desktop_notifier_service=true` will install the desktop notifier, which allows you to send desktop notifications to a user - by default user id 1000 - but you can provide a username `{{ sn_username }}`
+If `sn_install_desktop_notifier_service=true` will install the desktop notifier, which allows you to send desktop notifications to a user `{{ sn_username }}`
 
 | Parameter                    | Description                                                                                                   | Default Value    |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------- |
-| `sn_username`   | User to which send the desktop notifications  | `-`             |
+| `sn_username`                | [Mandatory] User to which send the desktop notifications and under which user the notifier runs               | `root`           |
 
 To use this notifier in your critical systemd service files, do this:
 
