@@ -2,12 +2,23 @@
   set_fact:
     sn_notification_type: googlechat
     sn_systemd_user_final: "{{ sn_systemd_user }}"
-    sn_execstart: "{{ systemd_script_target }}/{{ sn_script_name_googlechat }} -s %i -u {{ sn_googlechat_url }}"
+    sn_execstart: "{{ systemd_script_target }}/{{ sn_script_name_googlechat }} -s %i -u ${{ sn_googlechat_url_env }}"
+- name: Creates directory for environment files
+  file:
+    path: "{{ environmentfile_target_dir }}"
+    state: directory
+- name: Set environment file
+  template:
+    src: "{{ sn_environment_file }}.j2"
+    dest: "{{ environmentfile_target_dir }}/{{ sn_environment_file }}"
+    owner: "{{ sn_systemd_user_final }}"
+    group: "{{ sn_systemd_group }}"
+    mode: "{{ systemd_script_mode }}"
 - name: Install googlechat notifier script
   template:
     src: "{{ sn_script_name_googlechat }}.j2"
     dest: "{{ systemd_script_target }}/{{ sn_script_name_googlechat }}"
-    owner: "{{ systemd_script_user }}"
+    owner: "{{ sn_systemd_user_final }}"
     group: "{{ sn_systemd_group }}"
     mode: "{{ systemd_script_mode }}"
 - name: Install systemd service for googlechat notifier

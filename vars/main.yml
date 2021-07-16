@@ -1,10 +1,14 @@
 ---
 # vars file for papanito.systemd-notification
 sn_systemd_service_file: systemd-service-file.j2
+systemd_target_dir: /etc/systemd/system/
+environmentfile_target_dir: /etc/sysconfig
 
 # service specific definitions
 sn_service_name_googlechat: systemd-googlechat-notifier@
 sn_script_name_googlechat: notify-chat.sh
+sn_environment_file: systemdnotifiers.env
+sn_googlechat_url_env: GOOGLE_CHAT_URL
 
 sn_service_name_mail: systemd-mail-notifier@
 sn_script_name_mail: notify-mail.sh

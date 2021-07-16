@@ -19,11 +19,10 @@ There are common role variables and service specific ones. Most variables should
 
 | Parameter                    | Description                                                                                                   | Default Value    |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------- |
-| `sn_install_desktop_notifier_service`   | Whether to install the service for desktop notification - `No` will uninstall it if previously installed.     | `No`             |
-| `sn_install_googlechat_notifier_service` | Whether to install the service for google chat notification - `No` will uninstall it if previously installed. | `No`             |
-| `sn_install_mail_notifier_service`       | Whether to install the service for mail notification - `No` will uninstall it if previously installed.        | `No`             |
+| `sn_install_desktop_notifier_service`   | Whether to install the service for desktop notification - `No` will uninstall it if previously installed.     | `No`  |
+| `sn_install_googlechat_notifier_service`| Whether to install the service for google chat notification - `No` will uninstall it if previously installed. | `No`  |
+| `sn_install_mail_notifier_service`      | Whether to install the service for mail notification - `No` will uninstall it if previously installed.        | `No`  |
 | `systemd_script_mode`        | Mode of the script file                                  | `0774`                        |
-| `systemd_script_user`        | Owner of the script file                                 | `0774`                        |
 | `sn_systemd_user`            | User under which the service runs.                       | `root`                        |
 | `sn_systemd_group`           | User group under which the service runs.                 | `systemd-journal`             |
 

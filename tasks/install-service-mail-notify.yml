@@ -7,7 +7,7 @@
   template:
     src: "{{ sn_script_name_mail }}.j2"
     dest: "{{ systemd_script_target }}/{{ sn_script_name_mail }}"
-    owner: "{{ systemd_script_user }}"
+    owner: "{{ sn_systemd_user_final }}"
     group: "{{ sn_systemd_group }}"
     mode: "{{ systemd_script_mode }}"
 - name: Install systemd service for mail notifier
