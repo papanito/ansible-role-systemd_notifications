@@ -1,0 +1,22 @@
+---
+# defaults file for papanito.systemd-notification
+systemd_script_target: /usr/local/bin/
+systemd_script_mode: 0774
+systemd_script_user: root
+systemd_target_dir: /etc/systemd/system/
+sn_systemd_user: root
+sn_systemd_group: systemd-journal
+
+# service specific definitions
+sn_service_name_googlechat: systemd-googlechat-notifier
+sn_script_name_googlechat: notify-chat.sh
+sn_install_googlechat_notifier_service: no
+
+sn_service_name_mail: systemd-mail-notifier
+sn_script_name_mail: notify-mail.sh
+sn_mail_notify_command: sendmail -i -t
+sn_install_mail_notifier_service: no
+
+sn_service_name_desktop: systemd-desktop-notifier
+sn_script_name_desktop: notify-desktop.sh
+sn_install_desktop_notifier_service: no

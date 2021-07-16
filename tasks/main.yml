@@ -1,0 +1,26 @@
+---
+# tasks file for papanito.systemd-notification
+- name: Install systemd service for desktop notifications
+  import_tasks: install-service-desktop-notify.yml
+  become: yes
+  when: sn_install_desktop_notifier_service
+- name: Remove systemd service for desktop notifications
+  import_tasks: remove-service-desktop-notify.yml
+  become: yes
+  when: not sn_install_desktop_notifier_service
+- name: Install systemd service for googlechat notifications
+  import_tasks: install-service-googlechat-notify.yml
+  become: yes
+  when: sn_install_googlechat_notifier_service
+- name: Remove systemd service for googlechat notifications
+  import_tasks: remove-service-googlechat-notify.yml
+  become: yes
+  when: not sn_install_googlechat_notifier_service
+- name: Install systemd service for mail notifications
+  import_tasks: install-service-mail-notify.yml
+  become: yes
+  when: sn_install_mail_notifier_service
+- name: Remove systemd service for mail notifications
+  import_tasks: remove-service-mail-notify.yml
+  become: yes
+  when: not sn_install_mail_notifier_service

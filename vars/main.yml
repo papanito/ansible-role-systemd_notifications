@@ -1,0 +1,3 @@
+---
+# vars file for papanito.systemd-notification
+sn_systemd_service_file: systemd-service-file.j2

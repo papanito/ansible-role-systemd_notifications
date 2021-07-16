@@ -1,0 +1,11 @@
+#!/bin/bash
+
+sendmail -i -t <<ERRMAIL
+To: {{ sn_mail_recepient }}
+From: systemd <root@$(hostname)>
+Subject: [$(hostname)] $1
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain; charset=UTF-8
+
+$(systemctl status --full "$1")
+ERRMAIL

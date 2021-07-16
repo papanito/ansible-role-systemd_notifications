@@ -1,0 +1,7 @@
+- name: Install systemd desktop notifier
+  hosts: localhost
+  vars:
+    - sn_install_desktop_notifier_service: Yes
+
+  roles:
+     - ../../ansible-role-systemd_notifiers
