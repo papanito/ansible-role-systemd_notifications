@@ -1,6 +1,6 @@
 # Ansible role "papanito.systemd-notifiers" <!-- omit in toc -->
 
-![Ansible Role](https://img.shields.io/ansible/role/46965) ![Ansible Quality Score](https://img.shields.io/ansible/quality/46965) ![Ansible Role](https://img.shields.io/ansible/role/d/46965) ![GitHub issues](https://img.shields.io/github/issues/papanito/papanito.systemd-notifiers) ![GitHub pull requests](https://img.shields.io/github/issues-pr/papanito/papanito.systemd-notifiers)
+![Ansible Role](https://img.shields.io/ansible/role/55671) ![Ansible Quality Score](https://img.shields.io/ansible/quality/55671) ![Ansible Role](https://img.shields.io/ansible/role/d/55671) ![GitHub issues](https://img.shields.io/github/issues/papanito/ansible-role-systemd_notifiers) ![GitHub pull requests](https://img.shields.io/github/issues-pr/papanito/ansible-role-systemd_notifiers)
 
 When systemd services fail you usually don't really notice it unless it's a critical service. However there may be situations where it would be nice that you are mare aware of failing services. This role will setup systemd jobs of type `oneshot` which you can the use in your critical services, by using them in the [`OnFailure`][OnFailure]:
 
