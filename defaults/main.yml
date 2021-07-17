@@ -3,6 +3,7 @@
 systemd_script_target: /usr/local/bin/
 systemd_script_mode: 0774
 systemd_script_user: root
+systemd_service_mode: 0644
 sn_username: root
 sn_systemd_user: root
 sn_systemd_group: systemd-journal

@@ -14,6 +14,7 @@
   template:
     src: "{{ sn_systemd_service_file }}"
     dest: "{{ systemd_target_dir }}/{{ sn_service_name_mail }}.service"
+    mode: "{{ systemd_service_mode }}"
   register: sn_service_file_changed
 - name: Reload systemd unit if args were changed.
   ansible.builtin.systemd:

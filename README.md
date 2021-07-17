@@ -25,6 +25,7 @@ There are common role variables and service specific ones. Most variables should
 | `systemd_script_mode`        | Mode of the script file                                  | `0774`                        |
 | `sn_systemd_user`            | User under which the service runs.                       | `root`                        |
 | `sn_systemd_group`           | User group under which the service runs.                 | `systemd-journal`             |
+| `systemd_service_mode`        | Mode of the service file                                  | `0644`                        |
 
 The following role variables are fixed and cannot be overriden:
 
