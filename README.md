@@ -57,12 +57,12 @@ OnFailure=systemd-desktop-notifier@%N.service
 
 ### Google Chat Notification
 
-If `sn_install_googlechat_notifier_service=true` will install the googlechat notifier, which allows you to send notifications to a google channel specified via `googlechat-endpoint`
+If `sn_install_googlechat_notifier_service=true` will install the googlechat notifier, which allows you to send notifications to a google channel specified via `sn_googlechat_url`
 
 
 | Parameter                    | Description                                                                                                   | Default Value    |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------- |
-| `googlechat-endpoint`        | Url to google endpoint (webhook)                                                                              | `-`              |
+| `sn_googlechat_url`        | Url to google endpoint (webhook)                                                                              | `-`              |
 
 The message is [formatted][google-chat-message-format] as follows:
 
@@ -111,7 +111,7 @@ The following playbook installs the systemd notification service for google chat
   hosts: localhost
   vars:
     sn_install_googlechat_service: true
-    googlechat-endpoint: https://chat.googleapis.com/v1/spaces/xxxxxxxxxx/messages\?key\=xxxxxxxxxxxxxxxxxxxx\&token\=xxxxxxxxxxx%3D
+    sn_googlechat_url: https://chat.googleapis.com/v1/spaces/xxxxxxxxxx/messages\?key\=xxxxxxxxxxxxxxxxxxxx\&token\=xxxxxxxxxxx%3D
 
   roles:
      - papanito.systemd_notifications
