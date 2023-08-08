@@ -9,12 +9,12 @@
     dest: "{{ systemd_script_target }}/{{ sn_script_name_mail }}"
     owner: "{{ sn_systemd_user_final }}"
     group: "{{ sn_systemd_group }}"
-    mode: "{{ systemd_script_mode }}"
+    mode: "{{ sn_systemd_script_mode }}"
 - name: Install systemd service for mail notifier
   ansible.builtin.template:
     src: "{{ sn_systemd_service_file }}"
     dest: "{{ systemd_target_dir }}/{{ sn_service_name_mail }}.service"
-    mode: "{{ systemd_service_mode }}"
+    mode: "{{ sn_systemd_service_mode }}"
   register: sn_service_file_changed
 - name: Reload systemd unit if args were changed.
   ansible.builtin.systemd:

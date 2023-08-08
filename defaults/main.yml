@@ -1,9 +1,9 @@
 ---
 # defaults file for papanito.systemd-notification
 systemd_script_target: /usr/local/bin/
-systemd_script_mode: 774
+sn_systemd_script_mode: 774
 systemd_script_user: root
-systemd_service_mode: 644
+sn_systemd_service_mode: 644
 sn_username: root
 sn_systemd_user: root
 sn_systemd_group: systemd-journal
