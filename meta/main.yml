@@ -1,23 +1,25 @@
 galaxy_info:
   role_name: systemd_notifiers
   author: Adrian Wyssmann
+  namespace: papanito
   description: Ansible role to setup a systemd notifier service, to be used for failing systemd services (OnFailure)
   company: wyssmann.com
   license: Apache
   issue_tracker_url: https://github.com/papanito/ansible-role-systemd_notifiers/issues
+  github_branch: main
 
-  min_ansible_version: 2.10
+  min_ansible_version: "2.10"
 
   platforms:
-  - name: EL
-    versions:
-    - all
-  - name: Ubuntu
-    versions:
-    - all
-  - name: Debian
-    versions:
-    - all
+    - name: EL
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
 
   galaxy_tags:
     - systemd

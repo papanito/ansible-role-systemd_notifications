@@ -121,7 +121,7 @@ The following playbook installs the systemd notification service for google chat
 - name: Install systemd desktop notifier
   hosts: localhost
   vars:
-    sn_install_desktop_notifier_service: Yes
+    sn_install_desktop_notifier_service: true
 
   roles:
      - papanito.systemd_notifications

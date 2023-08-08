@@ -2,7 +2,7 @@
   hosts: localhost
   vars:
     - sn_username: aedu
-    - sn_install_desktop_notifier_service: Yes
+    - sn_install_desktop_notifier_service: true
 
   roles:
-     - ../../ansible-role-systemd_notifiers
+    - ../../ansible-role-systemd_notifiers

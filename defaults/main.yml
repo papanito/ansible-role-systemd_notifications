@@ -1,17 +1,17 @@
 ---
 # defaults file for papanito.systemd-notification
 systemd_script_target: /usr/local/bin/
-systemd_script_mode: 0774
+systemd_script_mode: 774
 systemd_script_user: root
-systemd_service_mode: 0644
+systemd_service_mode: 644
 sn_username: root
 sn_systemd_user: root
 sn_systemd_group: systemd-journal
 
 # service specific definitions
-sn_install_googlechat_notifier_service: no
+sn_install_googlechat_notifier_service: false
 
-sn_install_mail_notifier_service: no
+sn_install_mail_notifier_service: false
 sn_mail_notify_command: sendmail -i -t
 
-sn_install_desktop_notifier_service: no
+sn_install_desktop_notifier_service: false

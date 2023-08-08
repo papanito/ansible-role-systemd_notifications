@@ -1,17 +1,17 @@
 - name: Set default variables
-  set_fact:
+  ansible.builtin.set_fact:
     sn_notification_type: desktop
     sn_execstart: "{{ systemd_script_target }}/{{ sn_script_name_desktop }} -s %i -u {{ sn_username }}"
     sn_systemd_user_final: "{{ sn_username }}"
 - name: Install desktop notifier script
-  template:
+  ansible.builtin.template:
     src: "{{ sn_script_name_desktop }}.j2"
     dest: "{{ systemd_script_target }}/{{ sn_script_name_desktop }}"
     owner: "{{ sn_systemd_user_final }}"
     group: "{{ sn_systemd_group }}"
     mode: "{{ systemd_script_mode }}"
 - name: Install systemd service for desktop notifier
-  template:
+  ansible.builtin.template:
     src: "{{ sn_systemd_service_file }}"
     dest: "{{ systemd_target_dir }}/{{ sn_service_name_desktop }}.service"
     mode: "{{ systemd_service_mode }}"
